@@ -1,0 +1,30 @@
+spring:  
+  sql:
+    init:
+      platform: postgres
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: ${POSTGRESQL_URL:jdbc:postgresql://localhost:5432/home}
+    username: ${POSTGRESQL_USER:raspi4}
+    password: ${POSTGRESQL_PASSWORD:raspi4}
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        '[default_schema]': picomanager
+    hibernate:
+      ddl-auto: create
+    
+  flyway:
+    enabled: true 
+    default-schema: picomanager
+    
+logging:
+  level:
+    root: info
+    net:
+      fag:
+        picomanager: debug       
+    
+    
+
