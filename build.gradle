@@ -67,8 +67,8 @@ publishing {
         }
     }
     publications {
-        create<MavenPublication>("default") {
-            from(components["java"])
+        maven(MavenPublication) {
+            from components.java
         }
     }
 }
